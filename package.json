@@ -1,0 +1,12 @@
+{
+  "name": "amxx-config-generator",
+  "version": "1.0.0",
+  "description": "Visual config generator for AMX Mod X",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "echo 'Открой src/index.html в браузере'"
+  },
+  "keywords": ["amxx", "config", "generator"],
+  "author": "pseudocoder666",
+  "license": "MIT"
+}

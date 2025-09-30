@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMXX Config Generator</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 AMXX Config Generator</h1>
+            <p>Визуальный конструктор конфигураций для AMX Mod X</p>
+        </header>
+
+        <div class="main-layout">
+            <!-- Левая панель - конструктор -->
+            <div class="builder-panel">
+                <div class="section">
+                    <h3>⚙️ Основные настройки</h3>
+                    <div class="form-group">
+                        <label>Название сервера:</label>
+                        <input type="text" id="serverName" placeholder="My AMXX Server">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Тип мода:</label>
+                        <select id="modType">
+                            <option value="general">Общий</option>
+                            <option value="zombie">Zombie Plague</option>
+                            <option value="deathrun">DeathRun</option>
+                            <option value="surf">Surf</option>
+                            <option value="competitive">Competitive</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>🔧 CVAR настройки</h3>
+                    <div id="cvarList">
+                        <!-- Динамически генерируемые CVAR -->
+                    </div>
+                    <button onclick="addCustomCVAR()" class="btn-secondary">+ Добавить CVAR</button>
+                </div>
+
+                <div class="section">
+                    <h3>👥 Администраторы</h3>
+                    <div id="adminList">
+                        <div class="admin-entry">
+                            <input type="text" placeholder="SteamID/Nickname" class="admin-field">
+                            <input type="text" placeholder="Пароль" class="admin-field">
+                            <select class="admin-access">
+                                <option value="abcdefghijklmnopqrstu">Супер администратор</option>
+                                <option value="abcdefghijklmnopq">Администратор</option>
+                                <option value="abc">Модератор</option>
+                            </select>
+                            <button onclick="removeAdmin(this)" class="btn-remove">×</button>
+                        </div>
+                    </div>
+                    <button onclick="addAdmin()" class="btn-secondary">+ Добавить админа</button>
+                </div>
+            </div>
+
+            <!-- Правая панель - предпросмотр -->
+            <div class="preview-panel">
+                <div class="preview-header">
+                    <h3>📄 Предпросмотр конфига</h3>
+                    <div class="preview-actions">
+                        <button onclick="exportConfig()" class="btn-primary">💾 Экспорт</button>
+                        <button onclick="copyToClipboard()" class="btn-secondary">📋 Копировать</button>
+                    </div>
+                </div>
+                <pre id="configPreview"><code>// Конфиг будет отображаться здесь</code></pre>
+            </div>
+        </div>
+
+        <div class="templates-section">
+            <h3>🎨 Готовые шаблоны</h3>
+            <div class="template-buttons">
+                <button onclick="loadTemplate('zombie')" class="btn-template">🧟 Zombie Plague</button>
+                <button onclick="loadTemplate('deathrun')" class="btn-template">🏃 DeathRun</button>
+                <button onclick="loadTemplate('competitive')" class="btn-template">🎯 Competitive</button>
+                <button onclick="loadTemplate('fun')" class="btn-template">🎭 Fun Mod</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/config-builder.js"></script>
+    <script src="scripts/export-handler.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
