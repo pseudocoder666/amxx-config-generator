@@ -6,7 +6,7 @@
 
 *Создавай конфиги без написания кода!*
 
-![Preview](src/assets/images/preview.png)
+![Preview](src/preview.png)
 
 </div>
 
