@@ -6,7 +6,7 @@
 
 *Создавай конфиги без написания кода!*
 
-![Preview](https://fotohosting.pro/i/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA.5o7px+Preview)
+![Preview](src/assets/images/preview.png)
 
 </div>
 
